@@ -9,9 +9,11 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
 import { Progress } from "@/components/ui/progress";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Search, Calendar, Mail, Phone, MapPin, Users, Trophy, Flag, Music, Palette, Sparkles, Facebook, Twitter, Instagram, ChevronLeft, ChevronRight } from "lucide-react";
 
 // Import images
+import festivalLogo from "@/assets/festival-logo.jpg";
 import heroKaleidoscope from "@/assets/hero-kaleidoscope.jpg";
 import conceptBurst from "@/assets/concept-burst.jpg";
 import experienceWorkshop from "@/assets/experience-workshop.jpg";
@@ -34,6 +36,7 @@ interface Event {
   time: string;
   description: string;
   image: string;
+  eventType: "pre-event" | "upcoming";
 }
 
 interface GroupResult {
@@ -64,6 +67,7 @@ const eventsData: Event[] = [
     time: "2:00 PM",
     description: "Unleash your inner artist with digital tools",
     image: eventDigitalCanvas,
+    eventType: "pre-event",
   },
   {
     id: 2,
@@ -73,6 +77,7 @@ const eventsData: Event[] = [
     time: "6:00 PM",
     description: "Sway with live music as the sun goes down",
     image: eventAcousticSunset,
+    eventType: "pre-event",
   },
   {
     id: 3,
@@ -82,33 +87,37 @@ const eventsData: Event[] = [
     time: "11:00 AM",
     description: "Experience art that moves and inspires",
     image: eventKineticSculpture,
+    eventType: "pre-event",
   },
   {
     id: 4,
     name: "Modern Dance Fusion",
     category: "Performance",
-    date: "Oct 27",
+    date: "Dec 12",
     time: "3:00 PM",
     description: "A dynamic fusion of contemporary dance styles",
     image: eventDanceFusion,
+    eventType: "upcoming",
   },
   {
     id: 5,
     name: "Clay Pottery Fundamentals",
     category: "Workshop",
-    date: "Oct 28",
+    date: "Dec 13",
     time: "10:00 AM",
     description: "Get your hands dirty and create something beautiful",
     image: eventPottery,
+    eventType: "upcoming",
   },
   {
     id: 6,
     name: "Interactive Light Installation",
     category: "Exhibit",
-    date: "Oct 28",
+    date: "Dec 14",
     time: "1:00 PM",
     description: "A mesmerizing display of light and technology",
     image: eventLightInstallation,
+    eventType: "upcoming",
   },
 ];
 
@@ -246,7 +255,7 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Sparkles className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold text-foreground">Of Arcrino</span>
+              <span className="text-xl font-bold text-festival-darkteal">Of-ArCrIno'25</span>
             </div>
             <div className="hidden md:flex items-center gap-6">
               <button onClick={() => scrollToSection("home")} className="text-foreground hover:text-primary transition-colors">
@@ -317,12 +326,12 @@ const Index = () => {
         <div className="container mx-auto max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
-              <Badge className="bg-primary/10 text-primary border-0">OA</Badge>
-              <h1 className="text-5xl md:text-6xl font-bold text-foreground leading-tight">
-                Of Arcrino — Theme:
-                <br />
-                <span className="text-primary">Kaleidoscope of Stories</span>
+              <h1 className="text-4xl md:text-5xl font-bold text-festival-darkteal leading-tight">
+                Of-ArCrIno'25
               </h1>
+              <p className="text-2xl font-semibold text-foreground">
+                THE CITY SOUL CELEBRATION
+              </p>
               <p className="text-lg text-muted-foreground">
                 A vibrant celebration where every art form tells a unique tale, weaving together a tapestry of creativity and community.
               </p>
@@ -336,20 +345,20 @@ const Index = () => {
                 </Button>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Calendar className="h-4 w-4" />
-                  <span>October 26–27, 2024</span>
+                  <span>12 · 13 · 14 December 2025</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <MapPin className="h-4 w-4" />
-                  <span>Arcrino College Campus</span>
+                  <span>WIRAS Campus</span>
                 </div>
               </div>
             </div>
             <div className="relative animate-scale-in">
-              <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
+              <div className="rounded-3xl overflow-hidden shadow-2xl bg-card">
                 <img 
-                  src={heroKaleidoscope} 
-                  alt="Kaleidoscope of Stories" 
-                  className="w-full h-full object-cover"
+                  src={festivalLogo} 
+                  alt="Of-ArCrIno'25 - The City Soul Celebration" 
+                  className="w-full h-full object-contain"
                 />
               </div>
             </div>
@@ -415,76 +424,114 @@ const Index = () => {
       {/* Events Gallery */}
       <section id="events" className="py-20 px-4">
         <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Explore Our Events</h2>
-            <p className="text-lg text-muted-foreground">
-              Discover the workshops, performances, and exhibits at this year's festival.
-            </p>
+          {/* Pre-Events Section */}
+          <div className="mb-16">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-foreground mb-4">Pre-Events</h2>
+              <p className="text-lg text-muted-foreground">
+                Workshops and activities leading up to the main festival.
+              </p>
+            </div>
+
+            {/* Category Filters */}
+            <div className="flex flex-wrap justify-center gap-3 mb-12">
+              {(["All", "Workshop", "Performance", "Exhibit"] as EventCategory[]).map((category) => (
+                <Button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  variant={selectedCategory === category ? "default" : "outline"}
+                  className={selectedCategory === category ? "bg-primary text-primary-foreground" : ""}
+                >
+                  {category}
+                </Button>
+              ))}
+            </div>
+
+            {/* Pre-Events Carousel */}
+            <Carousel className="w-full max-w-6xl mx-auto">
+              <CarouselContent>
+                {eventsData
+                  .filter(event => event.eventType === "pre-event")
+                  .filter(event => selectedCategory === "All" || event.category === selectedCategory)
+                  .map((event) => (
+                    <CarouselItem key={event.id} className="md:basis-1/2 lg:basis-1/3">
+                      <Card className="overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1">
+                        <div className="aspect-video overflow-hidden relative">
+                          <Badge className="absolute top-4 left-4 z-10 bg-card/90 text-foreground border-0">
+                            {event.category.toUpperCase()}
+                          </Badge>
+                          <img 
+                            src={event.image} 
+                            alt={event.name} 
+                            className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                          />
+                        </div>
+                        <CardContent className="p-6">
+                          <h3 className="text-xl font-bold text-foreground mb-2">{event.name}</h3>
+                          <p className="text-muted-foreground mb-4">{event.description}</p>
+                          <div className="flex items-center justify-between text-sm text-muted-foreground">
+                            <span>{event.date}</span>
+                            <span>{event.time}</span>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </CarouselItem>
+                  ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
 
-          {/* Category Filters */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {(["All", "Workshop", "Performance", "Exhibit"] as EventCategory[]).map((category) => (
-              <Button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                variant={selectedCategory === category ? "default" : "outline"}
-                className={selectedCategory === category ? "bg-primary text-primary-foreground" : ""}
-              >
-                {category}
-              </Button>
-            ))}
-          </div>
+          {/* Upcoming Events Section */}
+          <div>
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-foreground mb-4">Upcoming Events</h2>
+              <p className="text-lg text-muted-foreground">
+                Main festival events happening in December 2025.
+              </p>
+            </div>
 
-          {/* Events Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {filteredEvents.map((event) => (
-              <Card key={event.id} className="overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1">
-                <div className="aspect-video overflow-hidden relative">
-                  <Badge className="absolute top-4 left-4 z-10 bg-card/90 text-foreground border-0">
-                    {event.category.toUpperCase()}
-                  </Badge>
-                  <img 
-                    src={event.image} 
-                    alt={event.name} 
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-foreground mb-2">{event.name}</h3>
-                  <p className="text-muted-foreground mb-4">{event.description}</p>
-                  <div className="flex items-center justify-between text-sm text-muted-foreground">
-                    <span>{event.date}</span>
-                    <span>{event.time}</span>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Pagination */}
-          <div className="flex justify-center items-center gap-2">
-            <Button variant="outline" size="icon" disabled>
-              <ChevronLeft className="h-4 w-4" />
-            </Button>
-            <Button variant="default" size="icon" className="bg-primary">
-              1
-            </Button>
-            <Button variant="outline" size="icon">
-              2
-            </Button>
-            <Button variant="outline" size="icon">
-              3
-            </Button>
-            <Button variant="outline" size="icon">
-              <ChevronRight className="h-4 w-4" />
-            </Button>
+            {/* Upcoming Events Carousel */}
+            <Carousel className="w-full max-w-6xl mx-auto">
+              <CarouselContent>
+                {eventsData
+                  .filter(event => event.eventType === "upcoming")
+                  .filter(event => selectedCategory === "All" || event.category === selectedCategory)
+                  .map((event) => (
+                    <CarouselItem key={event.id} className="md:basis-1/2 lg:basis-1/3">
+                      <Card className="overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1">
+                        <div className="aspect-video overflow-hidden relative">
+                          <Badge className="absolute top-4 left-4 z-10 bg-card/90 text-foreground border-0">
+                            {event.category.toUpperCase()}
+                          </Badge>
+                          <img 
+                            src={event.image} 
+                            alt={event.name} 
+                            className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                          />
+                        </div>
+                        <CardContent className="p-6">
+                          <h3 className="text-xl font-bold text-foreground mb-2">{event.name}</h3>
+                          <p className="text-muted-foreground mb-4">{event.description}</p>
+                          <div className="flex items-center justify-between text-sm text-muted-foreground">
+                            <span>{event.date}</span>
+                            <span>{event.time}</span>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </CarouselItem>
+                  ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </div>
       </section>
 
       {/* Results & Leaderboard */}
-      <section id="gallery" className="py-20 px-4 bg-gradient-to-br from-festival-peach/20 to-festival-coral/10">
+      <section id="gallery" className="py-20 px-4 bg-gradient-to-br from-festival-lightblue/20 to-festival-teal/10">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-foreground mb-4">

@@ -17,7 +17,7 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 20 14% 8%;
 
-    --primary: 14 88% 56%;
+    --primary: 175 61% 50%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 33 100% 68%;
@@ -39,15 +39,15 @@ All colors MUST be HSL.
     --radius: 1rem;
 
     /* Festival-specific colors */
-    --festival-orange: 14 88% 56%;
-    --festival-coral: 6 78% 64%;
-    --festival-peach: 25 95% 75%;
-    --festival-purple: 258 70% 60%;
-    --festival-yellow: 45 93% 58%;
-    --festival-blue: 220 80% 60%;
+    --festival-lime: 74 61% 56%;
+    --festival-teal: 175 61% 50%;
+    --festival-lightblue: 190 77% 67%;
+    --festival-darkblue: 185 62% 45%;
+    --festival-darkteal: 180 100% 12%;
+    --festival-yellow: 45 93% 66%;
 
     /* Gradients */
-    --gradient-warm: linear-gradient(135deg, hsl(14 88% 56%) 0%, hsl(6 78% 64%) 50%, hsl(258 70% 60%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(74 61% 56%) 0%, hsl(175 61% 50%) 50%, hsl(190 77% 67%) 100%);
     --gradient-subtle: linear-gradient(180deg, hsl(40 35% 98%) 0%, hsl(40 23% 95%) 100%);
 
     /* Shadows */

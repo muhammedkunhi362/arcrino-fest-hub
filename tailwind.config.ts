@@ -48,12 +48,12 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         festival: {
-          orange: "hsl(var(--festival-orange))",
-          coral: "hsl(var(--festival-coral))",
-          peach: "hsl(var(--festival-peach))",
-          purple: "hsl(var(--festival-purple))",
+          lime: "hsl(var(--festival-lime))",
+          teal: "hsl(var(--festival-teal))",
+          lightblue: "hsl(var(--festival-lightblue))",
+          darkblue: "hsl(var(--festival-darkblue))",
+          darkteal: "hsl(var(--festival-darkteal))",
           yellow: "hsl(var(--festival-yellow))",
-          blue: "hsl(var(--festival-blue))",
         },
       },
       borderRadius: {

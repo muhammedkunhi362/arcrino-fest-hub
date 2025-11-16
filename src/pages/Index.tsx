@@ -255,7 +255,6 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Sparkles className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold text-festival-darkteal">Of-ArCrIno'25</span>
             </div>
             <div className="hidden md:flex items-center gap-6">
               <button onClick={() => scrollToSection("home")} className="text-foreground hover:text-primary transition-colors">
@@ -324,40 +323,12 @@ const Index = () => {
       {/* Hero Section */}
       <section id="home" className="py-20 px-4">
         <div className="container mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 animate-fade-in">
-              <h1 className="text-4xl md:text-5xl font-bold text-festival-darkteal leading-tight">
-                Of-ArCrIno'25
-              </h1>
-              <p className="text-2xl font-semibold text-foreground">
-                THE CITY SOUL CELEBRATION
-              </p>
-              <p className="text-lg text-muted-foreground">
-                A vibrant celebration where every art form tells a unique tale, weaving together a tapestry of creativity and community.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button 
-                  onClick={() => scrollToSection("events")} 
-                  size="lg" 
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground hover:scale-105 transition-transform"
-                >
-                  Explore Events
-                </Button>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Calendar className="h-4 w-4" />
-                  <span>12 · 13 · 14 December 2025</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <MapPin className="h-4 w-4" />
-                  <span>WIRAS Campus</span>
-                </div>
-              </div>
-            </div>
-            <div className="relative animate-scale-in">
+          <div className="flex justify-center items-center">
+            <div className="relative animate-scale-in max-w-2xl">
               <div className="rounded-3xl overflow-hidden shadow-2xl bg-card">
                 <img 
                   src={festivalLogo} 
-                  alt="Of-ArCrIno'25 - The City Soul Celebration" 
+                  alt="Festival Logo" 
                   className="w-full h-full object-contain"
                 />
               </div>

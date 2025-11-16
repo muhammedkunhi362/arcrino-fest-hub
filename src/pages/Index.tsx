@@ -14,6 +14,7 @@ import { Search, Calendar, Mail, Phone, MapPin, Users, Trophy, Flag, Music, Pale
 
 // Import images
 import festivalLogo from "@/assets/festival-logo.jpg";
+import heroPoster from "@/assets/hero-poster.jpg";
 import heroKaleidoscope from "@/assets/hero-kaleidoscope.jpg";
 import conceptBurst from "@/assets/concept-burst.jpg";
 import experienceWorkshop from "@/assets/experience-workshop.jpg";
@@ -250,20 +251,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section id="home" className="py-20 px-4">
-        <div className="container mx-auto max-w-7xl">
-          <div className="flex justify-center items-center">
-            <div className="relative animate-scale-in max-w-2xl">
-              <div className="rounded-3xl overflow-hidden shadow-2xl bg-card">
-                <img 
-                  src={festivalLogo} 
-                  alt="Festival Logo" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+      <section 
+        id="home" 
+        className="min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center"
+        style={{ backgroundImage: `url(${heroPoster})` }}
+      >
       </section>
 
 

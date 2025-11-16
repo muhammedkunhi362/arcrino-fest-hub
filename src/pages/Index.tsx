@@ -249,77 +249,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-card/80 backdrop-blur-md border-b border-border">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Sparkles className="h-6 w-6 text-primary" />
-            </div>
-            <div className="hidden md:flex items-center gap-6">
-              <button onClick={() => scrollToSection("home")} className="text-foreground hover:text-primary transition-colors">
-                Home
-              </button>
-              <button onClick={() => scrollToSection("events")} className="text-foreground hover:text-primary transition-colors">
-                Events
-              </button>
-              <button onClick={() => scrollToSection("gallery")} className="text-muted-foreground hover:text-primary transition-colors">
-                Gallery
-              </button>
-              <button onClick={() => scrollToSection("about")} className="text-muted-foreground hover:text-primary transition-colors">
-                About
-              </button>
-              <button onClick={() => scrollToSection("contact")} className="text-muted-foreground hover:text-primary transition-colors">
-                Contact
-              </button>
-            </div>
-            <Dialog open={isRegisterOpen} onOpenChange={setIsRegisterOpen}>
-              <DialogTrigger asChild>
-                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                  Get Tickets
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="max-w-md">
-                <DialogHeader>
-                  <DialogTitle>Register for Of Arcrino</DialogTitle>
-                </DialogHeader>
-                <form className="space-y-4">
-                  <div>
-                    <Label htmlFor="team-name">Team Name</Label>
-                    <Input id="team-name" placeholder="Enter your team name" />
-                  </div>
-                  <div>
-                    <Label htmlFor="leader-email">Leader Email</Label>
-                    <Input id="leader-email" type="email" placeholder="team.leader@email.com" />
-                  </div>
-                  <div>
-                    <Label htmlFor="phone">Phone Number</Label>
-                    <Input id="phone" type="tel" placeholder="(123) 456-7890" />
-                  </div>
-                  <div>
-                    <Label htmlFor="category">Category</Label>
-                    <Select>
-                      <SelectTrigger id="category">
-                        <SelectValue placeholder="Select category" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="workshop">Workshop</SelectItem>
-                        <SelectItem value="performance">Performance</SelectItem>
-                        <SelectItem value="exhibit">Exhibit</SelectItem>
-                        <SelectItem value="all">All Categories</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
-                    Submit Registration
-                  </Button>
-                </form>
-              </DialogContent>
-            </Dialog>
-          </div>
-        </div>
-      </nav>
-
       {/* Hero Section */}
       <section id="home" className="py-20 px-4">
         <div className="container mx-auto max-w-7xl">
@@ -337,60 +266,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Theme Details */}
-      <section className="py-16 px-4 bg-card/30">
-        <div className="container mx-auto max-w-7xl space-y-12">
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video overflow-hidden">
-                <img 
-                  src={conceptBurst} 
-                  alt="Our Concept" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-foreground mb-2">Our Concept</h3>
-                <p className="text-muted-foreground">
-                  The 'Kaleidoscope of Stories' theme invites you to explore the myriad ways narratives are crafted and shared. Discover how different artistic disciplines interweave and express stories, creating a vibrant, ever-changing mosaic of human experience.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video overflow-hidden">
-                <img 
-                  src={experienceWorkshop} 
-                  alt="The Experience" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-foreground mb-2">The Experience</h3>
-                <p className="text-muted-foreground">
-                  Immerse yourself in a dynamic atmosphere filled with diverse workshops, captivating performances, and interactive installations. Attendees can expect a hands-on, engaging journey through various art forms, from visual arts to theatrical productions.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video overflow-hidden">
-                <img 
-                  src={communityTeam} 
-                  alt="Our Community" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-foreground mb-2">Our Community</h3>
-                <p className="text-muted-foreground">
-                  This festival is a celebration of collaboration and inclusivity, bringing together students, faculty, and local artists. We foster a welcoming environment where everyone is encouraged to share their story and connect with fellow creators.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
 
       {/* Events Gallery */}
       <section id="events" className="py-20 px-4">

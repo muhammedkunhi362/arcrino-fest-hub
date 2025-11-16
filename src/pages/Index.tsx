@@ -260,45 +260,51 @@ const Index = () => {
         <div className="absolute top-0 left-0 right-0 z-10 flex justify-center">
           <div className="w-full max-w-4xl px-4 py-6">
             {/* Single Input-Style Glass Container */}
-            <div className="bg-white/20 backdrop-blur-xl border border-white/30 rounded-full shadow-2xl px-3 py-2 flex flex-wrap items-center justify-center gap-2 md:gap-1">
+            <div className="bg-white/30 backdrop-blur-xl border border-white/40 rounded-full shadow-2xl px-3 py-2 flex flex-wrap items-center justify-center gap-2 md:gap-1">
               <button 
                 onClick={() => scrollToSection("home")} 
-                className="px-4 md:px-6 py-2 text-sm md:text-base font-medium text-white hover:bg-white/30 rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+                className="px-4 md:px-6 py-2 text-sm md:text-base font-semibold text-white hover:bg-white/40 rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
+                style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}
               >
                 Home
               </button>
-              <div className="hidden md:block w-px h-6 bg-white/30" />
+              <div className="hidden md:block w-px h-6 bg-white/50" />
               <button 
                 onClick={() => scrollToSection("events")} 
-                className="px-4 md:px-6 py-2 text-sm md:text-base font-medium text-white hover:bg-white/30 rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+                className="px-4 md:px-6 py-2 text-sm md:text-base font-semibold text-white hover:bg-white/40 rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
+                style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}
               >
                 Events
               </button>
-              <div className="hidden md:block w-px h-6 bg-white/30" />
+              <div className="hidden md:block w-px h-6 bg-white/50" />
               <button 
                 onClick={() => scrollToSection("gallery")} 
-                className="px-4 md:px-6 py-2 text-sm md:text-base font-medium text-white hover:bg-white/30 rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+                className="px-4 md:px-6 py-2 text-sm md:text-base font-semibold text-white hover:bg-white/40 rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
+                style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}
               >
                 Results
               </button>
-              <div className="hidden md:block w-px h-6 bg-white/30" />
+              <div className="hidden md:block w-px h-6 bg-white/50" />
               <button 
                 onClick={() => scrollToSection("about")} 
-                className="px-4 md:px-6 py-2 text-sm md:text-base font-medium text-white hover:bg-white/30 rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+                className="px-4 md:px-6 py-2 text-sm md:text-base font-semibold text-white hover:bg-white/40 rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
+                style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}
               >
                 Teams
               </button>
-              <div className="hidden md:block w-px h-6 bg-white/30" />
+              <div className="hidden md:block w-px h-6 bg-white/50" />
               <button 
                 onClick={() => scrollToSection("contact")} 
-                className="px-4 md:px-6 py-2 text-sm md:text-base font-medium text-white hover:bg-white/30 rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+                className="px-4 md:px-6 py-2 text-sm md:text-base font-semibold text-white hover:bg-white/40 rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
+                style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}
               >
                 Contact
               </button>
-              <div className="hidden md:block w-px h-6 bg-white/30" />
+              <div className="hidden md:block w-px h-6 bg-white/50" />
               <button 
                 onClick={() => scrollToSection("gallery")}
-                className="px-4 md:px-6 py-2 text-sm md:text-base font-semibold text-white bg-gradient-to-r from-festival-teal/80 to-festival-darkteal/80 hover:from-festival-teal hover:to-festival-darkteal rounded-full transition-all duration-300 hover:scale-105 flex items-center gap-2 shadow-lg"
+                className="px-4 md:px-6 py-2 text-sm md:text-base font-bold text-white bg-gradient-to-r from-festival-teal to-festival-darkteal hover:from-festival-teal/90 hover:to-festival-darkteal/90 rounded-full transition-all duration-300 hover:scale-105 flex items-center gap-2 shadow-lg"
+                style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}
               >
                 <Search className="h-4 w-4" />
                 <span className="hidden sm:inline">Get Result</span>

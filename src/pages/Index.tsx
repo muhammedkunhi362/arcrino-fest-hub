@@ -256,51 +256,53 @@ const Index = () => {
         className="min-h-screen bg-cover bg-center bg-no-repeat relative"
         style={{ backgroundImage: `url(${heroPoster})` }}
       >
-        {/* Menu Bar and Get Result Button */}
-        <div className="absolute top-0 left-0 right-0 z-10">
-          <div className="container mx-auto px-4 py-6">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              {/* Menu Buttons */}
-              <div className="flex flex-wrap items-center gap-3">
-                <button 
-                  onClick={() => scrollToSection("home")} 
-                  className="px-6 py-2.5 bg-white/90 backdrop-blur-sm border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-white hover:shadow-md transition-all hover:scale-105"
-                >
-                  Home
-                </button>
-                <button 
-                  onClick={() => scrollToSection("events")} 
-                  className="px-6 py-2.5 bg-white/90 backdrop-blur-sm border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-white hover:shadow-md transition-all hover:scale-105"
-                >
-                  Events
-                </button>
-                <button 
-                  onClick={() => scrollToSection("gallery")} 
-                  className="px-6 py-2.5 bg-white/90 backdrop-blur-sm border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-white hover:shadow-md transition-all hover:scale-105"
-                >
-                  Results
-                </button>
-                <button 
-                  onClick={() => scrollToSection("about")} 
-                  className="px-6 py-2.5 bg-white/90 backdrop-blur-sm border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-white hover:shadow-md transition-all hover:scale-105"
-                >
-                  Teams
-                </button>
-                <button 
-                  onClick={() => scrollToSection("contact")} 
-                  className="px-6 py-2.5 bg-white/90 backdrop-blur-sm border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-white hover:shadow-md transition-all hover:scale-105"
-                >
-                  Contact
-                </button>
-              </div>
-
-              {/* Get Result Button */}
+        {/* Glass Menu Bar */}
+        <div className="absolute top-0 left-0 right-0 z-10 flex justify-center">
+          <div className="w-full max-w-4xl px-4 py-6">
+            {/* Single Input-Style Glass Container */}
+            <div className="bg-white/20 backdrop-blur-xl border border-white/30 rounded-full shadow-2xl px-3 py-2 flex flex-wrap items-center justify-center gap-2 md:gap-1">
+              <button 
+                onClick={() => scrollToSection("home")} 
+                className="px-4 md:px-6 py-2 text-sm md:text-base font-medium text-white hover:bg-white/30 rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+              >
+                Home
+              </button>
+              <div className="hidden md:block w-px h-6 bg-white/30" />
+              <button 
+                onClick={() => scrollToSection("events")} 
+                className="px-4 md:px-6 py-2 text-sm md:text-base font-medium text-white hover:bg-white/30 rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+              >
+                Events
+              </button>
+              <div className="hidden md:block w-px h-6 bg-white/30" />
+              <button 
+                onClick={() => scrollToSection("gallery")} 
+                className="px-4 md:px-6 py-2 text-sm md:text-base font-medium text-white hover:bg-white/30 rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+              >
+                Results
+              </button>
+              <div className="hidden md:block w-px h-6 bg-white/30" />
+              <button 
+                onClick={() => scrollToSection("about")} 
+                className="px-4 md:px-6 py-2 text-sm md:text-base font-medium text-white hover:bg-white/30 rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+              >
+                Teams
+              </button>
+              <div className="hidden md:block w-px h-6 bg-white/30" />
+              <button 
+                onClick={() => scrollToSection("contact")} 
+                className="px-4 md:px-6 py-2 text-sm md:text-base font-medium text-white hover:bg-white/30 rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+              >
+                Contact
+              </button>
+              <div className="hidden md:block w-px h-6 bg-white/30" />
               <button 
                 onClick={() => scrollToSection("gallery")}
-                className="px-8 py-2.5 bg-festival-teal hover:bg-festival-darkteal text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all hover:scale-105 flex items-center gap-2"
+                className="px-4 md:px-6 py-2 text-sm md:text-base font-semibold text-white bg-gradient-to-r from-festival-teal/80 to-festival-darkteal/80 hover:from-festival-teal hover:to-festival-darkteal rounded-full transition-all duration-300 hover:scale-105 flex items-center gap-2 shadow-lg"
               >
                 <Search className="h-4 w-4" />
-                Get Result
+                <span className="hidden sm:inline">Get Result</span>
+                <span className="sm:hidden">Result</span>
               </button>
             </div>
           </div>
